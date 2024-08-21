@@ -1,0 +1,33 @@
+.container {
+  top: 1rem; 
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  position: absolute;
+  margin: 1rem;
+  border: 0.3px solid black;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.innerContainer{
+  padding: 0.5rem 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem;
+}
+
+.name, .title{
+  margin: 0rem;
+}
+
+.title{
+font-size: 16px
+}
+
+.title a {
+  font-size: 16px
+}
