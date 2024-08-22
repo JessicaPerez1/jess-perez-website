@@ -9,10 +9,10 @@ export default function Layout({ children }) {
     <div className={styles.container}>
       <div className={styles.innerContainer}>
       <Head>
-        <link rel="icon" href="/lightbulb.png" />
+        <link rel="icon" href="/tv-glitch.png" />
         <meta
           name="description"
-          content="Jessica Perez website using Next.js"
+          content="Jessica Perez website"
         />
         <meta
           property="og:image"

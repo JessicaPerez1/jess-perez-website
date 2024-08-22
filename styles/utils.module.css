@@ -22,11 +22,30 @@
 
 .listItem {
   margin: 0 0 1.25rem;
+
 }
 
-.section{
+.listItem > a:focus {
+  text-decoration: none !important;
+  font-weight: 900 !important
+}
+
+.section {
   position: absolute;
   bottom: 2rem;
-  right: 2rem;
-  bottom: 1rem
+  right: 0.5rem;
+  bottom: 1rem;
+  max-height: 350px;
+overflow-y: auto;
+text-align: right;
+padding-right: 1rem;
+padding-left: 0.5rem
+}
+
+@media (width >= 480px) {
+  .section {
+    right: 2rem;
+    max-height: 500px;
+    padding-right: 0
+  }
 }

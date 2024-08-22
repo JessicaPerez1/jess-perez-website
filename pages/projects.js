@@ -2,7 +2,7 @@ import Link from "next/link"
 import utilStyles from "../styles/utils.module.css";
 import fs from 'fs';
 import path from 'path';
-import { parseISO, format } from "date-fns"
+import Date from "../components/date";
 
 // Generate projects data at build time
 export const getStaticProps = async () => {
@@ -21,14 +21,14 @@ export default function Projects({projects}) {
   return (
     <section className={`${utilStyles.padding1px} ${utilStyles.section}`}>
         <ul className={utilStyles.list}>
-          {projects.map(({ id, date, title, href }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link target="_blank" href={`${href}`}>
-                <a>
+          {projects.map(({ date, title, href }) => (
+            <li className={utilStyles.listItem} key={title}>
+              <Link href={`${href}`}>
+                <a target="_blank">
                 {title}
                 <br />
               <small>
-                <time>{format(parseISO(date), "LLLL yyyy")}</time>
+                <Date dateString={date} />
               </small>
               </a>
               </Link>

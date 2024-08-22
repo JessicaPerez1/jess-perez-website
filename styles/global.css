@@ -38,6 +38,10 @@ a:hover {
   color: darkgrey;
 }
 
+a:focus{
+text-decoration: line-through;
+}
+
 * {
   box-sizing: border-box;
 }

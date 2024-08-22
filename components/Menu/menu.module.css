@@ -5,13 +5,3 @@
     list-style: none;
     padding: 0;
 }
-
-.menu-item {
-    padding: 10px;
-    cursor: pointer;
-    position: relative;
-  }
-  
-.menu .selected {
-    list-style:circle;
-  }

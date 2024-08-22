@@ -10,7 +10,7 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-     <section className={`${utilStyles.padding1px} ${utilStyles.section}`}> <About /> </section>
+     <section className={utilStyles.padding1px}> <About /> </section>
     </>
   );
 }
