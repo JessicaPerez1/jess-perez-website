@@ -17,12 +17,11 @@
 .list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  height: 100%;
 }
 
-.listItem {
+.listItem:not(:last-child){
   margin: 0 0 1.25rem;
-
 }
 
 .listItem > a:focus {
@@ -32,20 +31,18 @@
 
 .section {
   position: absolute;
-  bottom: 2rem;
   right: 0.5rem;
-  bottom: 1rem;
+  bottom: 0rem;
   max-height: 350px;
-overflow-y: auto;
-text-align: right;
-padding-right: 1rem;
-padding-left: 0.5rem
+  overflow-y: auto;
+  text-align: right;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
 }
 
 @media (width >= 480px) {
-  .section {
-    right: 2rem;
-    max-height: 500px;
-    padding-right: 0
+  .section { 
+  width: 59%;
+  max-height: 100%;
   }
 }

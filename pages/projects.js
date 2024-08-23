@@ -4,7 +4,6 @@ import fs from 'fs';
 import path from 'path';
 import Date from "../components/date";
 
-// Generate projects data at build time
 export const getStaticProps = async () => {
   const filePath = path.join(process.cwd(), 'data', 'projects.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');
