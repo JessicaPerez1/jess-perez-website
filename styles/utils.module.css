@@ -18,10 +18,31 @@
   list-style: none;
   padding: 0;
   height: 100%;
+  font-size: 13px;
+  transition: font-size 0.3s ease;
 }
 
+@media (width >= 480px) {
+  .list{
+    font-size: 16px;
+    }
+  }
+
+@media (width >= 1280px) {
+   .list {
+    font-size: 18px;
+  }
+}
+
+
+.listItem:not(:last-child){
+  margin: 0 0 0.75rem;
+}
+
+@media (width >= 768px) {
 .listItem:not(:last-child){
   margin: 0 0 1.25rem;
+  }
 }
 
 .listItem > a:focus {
@@ -33,7 +54,7 @@
   position: absolute;
   right: 0.5rem;
   bottom: 0rem;
-  max-height: 350px;
+  max-height: 400px;
   overflow-y: auto;
   text-align: right;
   padding-right: 1rem;
@@ -42,7 +63,15 @@
 
 @media (width >= 480px) {
   .section { 
-  width: 59%;
+  /* width: 59%; */
+  height: fit-content;
+  max-height: 470px;
+  }
+}
+
+@media (width >= 768px) {
+  .section {
+  width: fit-content;
   max-height: 100%;
   }
 }

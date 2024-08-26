@@ -5,8 +5,8 @@ export default function About() {
   return (
     <section className={utilStyles.section}>
       <ul className={utilStyles.list}>
-      {aboutInfo.map((item) => (
-        <li className={utilStyles.listItem}>
+      {aboutInfo.map((item, index) => (
+        <li key={index} className={utilStyles.listItem}>
           {item}
         </li>
       ))}

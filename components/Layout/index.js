@@ -21,7 +21,7 @@ export default function Layout({ children }) {
       </Head>
       <header className={styles.header}>
         <h2 className={styles.name}>Jessica Perez-Jacob</h2>
-        <p className={styles.title}>software developer at <a href="https://work.co">Work&Co</a></p>
+        <p className={styles.title}>Software developer at <a href="https://work.co">Work&Co</a></p>
       </header>
       <main className={styles.main}>{children}</main>
       </div>
