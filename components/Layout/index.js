@@ -1,10 +1,24 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import styles from "./layout.module.css";
+import SplashScreen from "../SplashScreen";
 
 export const siteTitle = "Jessica Perez Website";
 
 export default function Layout({ children }) {
+  const isHome = '/';
+  const [isLoading, setIsLoading] = useState(isHome);
+
+  useEffect(()=> {
+    if(isLoading) return
+  }, [isLoading]);
+
   return (
+    isLoading && isHome ? (
+      <SplashScreen finishLoading={()=> setIsLoading(false)}/>
+     ):(
     <div className={styles.container}>
       <div className={styles.innerContainer}>
       <Head>
@@ -26,5 +40,6 @@ export default function Layout({ children }) {
       <main className={styles.main}>{children}</main>
       </div>
     </div>
+     )
   );
 }
