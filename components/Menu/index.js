@@ -1,8 +1,11 @@
-import styles from "./menu.module.css";
 import Link from "next/link";
+import styles from "./menu.module.css";
 
 export default function Menu({  }) {
-  const menuItems = [{name:"About", href:"/about"}, {name:"Projects", href:"/projects"}, {name:"Info", href:"/info"},
+  const menuItems = [
+    {name:"About", href:"/about"}, 
+    {name:"Projects", href:"/projects"}, 
+    {name:"Info", href:"/info"},
     {name:"Contact", href:"/contact"}
   ];
 

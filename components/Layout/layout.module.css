@@ -5,12 +5,13 @@
   right: 1rem;
   position: absolute;
   margin: 1rem;
-  border: 0.3px solid black;
+  border: 0.3px solid white;
   border-radius: 10px;
 }
 
 .innerContainer{
   padding: 0.5rem 1.5rem;
+  height: 100%;
 }
 
 .header {

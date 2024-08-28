@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
 
 export default function Projects({projects}) {
   return (
-    <section className={`${utilStyles.padding1px} ${utilStyles.section}`}>
+    <section className={utilStyles.section}>
         <ul className={utilStyles.list}>
           {projects.map(({ date, title, href }) => (
             <li className={utilStyles.listItem} key={title}>

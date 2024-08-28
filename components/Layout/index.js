@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import styles from "./layout.module.css";
 import SplashScreen from "../SplashScreen";
+import Menu from "../Menu"
 
 export const siteTitle = "Jessica Perez Website";
 
 export default function Layout({ children }) {
+  // TODO: fix using pathname
   const isHome = '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
@@ -16,7 +18,7 @@ export default function Layout({ children }) {
   }, [isLoading]);
 
   return (
-    isLoading && isHome ? (
+    isLoading ? (
       <SplashScreen finishLoading={()=> setIsLoading(false)}/>
      ):(
     <div className={styles.container}>
@@ -36,8 +38,9 @@ export default function Layout({ children }) {
       <header className={styles.header}>
         <h2 className={styles.name}>Jessica Perez-Jacob</h2>
         <p className={styles.title}>Software developer at <a href="https://work.co">Work&Co</a></p>
+        <Menu />
       </header>
-      <main className={styles.main}>{children}</main>
+      <main >{children}</main>
       </div>
     </div>
      )

@@ -1,6 +1,7 @@
 html{
   overflow: hidden;
-  background: rgb(250, 247, 247)
+  background: rgb(23, 23, 23);
+  color: white;
 }
 
 html,
@@ -12,13 +13,12 @@ body {
   font-style: normal;
   line-height: 1.6;
   font-size: 18px;
-  height: 100%;
 }
 
 a {
   font-weight: 100;
   font-size: 16px;
-  color: rgb(67, 66, 66);
+  color: rgb(176, 175, 175);
   text-decoration: none;
   transition: font-size 0.3s ease;
 }
@@ -36,11 +36,11 @@ a {
 }
 
 a:hover {
-  color: rgb(136, 135, 135);
+  color: rgb(94, 92, 92);
 }
 
 a:focus{
-text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 * {
