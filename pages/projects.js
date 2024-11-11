@@ -1,12 +1,13 @@
-import Link from "next/link"
+import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 import Date from "../components/date";
+import PropTypes from "prop-types";
 
 export const getStaticProps = async () => {
-  const filePath = path.join(process.cwd(), 'data', 'projects.json');
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const filePath = path.join(process.cwd(), "data", "projects.json");
+  const fileContents = fs.readFileSync(filePath, "utf8");
   const projects = JSON.parse(fileContents);
 
   return {
@@ -16,24 +17,28 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Projects({projects}) {
+Projects.propTypes = {
+  projects: PropTypes.func.isRequired,
+};
+
+export default function Projects({ projects }) {
   return (
     <section className={utilStyles.section}>
-        <ul className={utilStyles.list}>
-          {projects.map(({ date, title, href }) => (
-            <li className={utilStyles.listItem} key={title}>
-              <Link href={`${href}`}>
-                <a target="_blank">
+      <ul className={utilStyles.list}>
+        {projects.map(({ date, title, href }) => (
+          <li className={utilStyles.listItem} key={title}>
+            <Link href={`${href}`}>
+              <a target="_blank" href={`${href}`}>
                 {title}
                 <br />
-              <small>
-                <Date dateString={date} />
-              </small>
+                <small>
+                  <Date dateString={date} />
+                </small>
               </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

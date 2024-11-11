@@ -1,35 +1,40 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
 import anime from "animejs";
 import styles from "./splashScreen.module.css";
 
-export default function SplashScreen({finishLoading}) {
-const [isMounted, setIsMounted] = useState(false);
+SplashScreen.propTypes = {
+  finishLoading: PropTypes.func.isRequired,
+};
 
-const animate = () => {
-  const loader = anime.timeline({
-    complete: () => finishLoading()
-  })
+export default function SplashScreen({ finishLoading }) {
+  const [isMounted, setIsMounted] = useState(false);
 
-  loader.add({
-    targets: '.container',
-    duration: 2000,
-    easing: 'easeInOutExpo',
-  })
-}
+  const animate = () => {
+    const loader = anime.timeline({
+      complete: () => finishLoading(),
+    });
 
-  useEffect(()=>{
-    const timeout = setTimeout(()=> setIsMounted(true), 500)
-    animate()
-    return () => clearTimeout(timeout)
-  })
+    loader.add({
+      targets: ".container",
+      duration: 2000,
+      easing: "easeInOutExpo",
+    });
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsMounted(true), 500);
+    animate();
+    return () => clearTimeout(timeout);
+  }, []);
   return (
     <div className={styles.containerOuter}>
       <section className={styles.container}>
         <p className={styles.glitch}>
           <span aria-hidden="true"> Jessica Perez | Portfolio </span>
-           Jessica Perez | Portfolio
+          Jessica Perez | Portfolio
           <span aria-hidden="true"> Jessica Perez | Portfolio </span>
         </p>
       </section>
