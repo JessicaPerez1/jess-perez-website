@@ -2,7 +2,7 @@ import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
 import fs from "fs";
 import path from "path";
-import Date from "../components/date";
+import DateComponent from "../components/date";
 import PropTypes from "prop-types";
 
 export const getStaticProps = async () => {
@@ -32,7 +32,7 @@ export default function Projects({ projects }) {
                 {title}
                 <br />
                 <small>
-                  <Date dateString={date} />
+                  <DateComponent dateString={date} />
                 </small>
               </a>
             </Link>
