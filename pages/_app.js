@@ -6,7 +6,7 @@ import "../styles/global.css";
 
 App.propTypes = {
   Component: PropTypes.func.isRequired,
-  pageProps: PropTypes.func.isRequired,
+  pageProps: PropTypes.object.isRequired,
 };
 
 export default function App({ Component, pageProps }) {

@@ -2,7 +2,7 @@ import { parseISO, format } from "date-fns";
 import PropTypes from "prop-types";
 
 DateComponent.propTypes = {
-  dateString: PropTypes.func.isRequired,
+  dateString: PropTypes.string.isRequired,
 };
 
 export default function DateComponent({ dateString }) {

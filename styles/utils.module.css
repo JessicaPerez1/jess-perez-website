@@ -16,7 +16,7 @@
 
 .list {
   list-style: none;
-  padding: 0;
+  padding: 0 0.25rem;
   margin-bottom: 0.5rem;
   height: 100%;
   font-size: 13px;
@@ -39,17 +39,6 @@
   margin: 0 0 0.75rem;
 }
 
-@media (width >= 768px) {
-  .listItem:not(:last-child) {
-    margin: 0 0 1.25rem;
-  }
-}
-
-.listItem > a:focus {
-  text-decoration: none !important;
-  font-weight: 900 !important;
-}
-
 .section {
   display: flex;
   flex-direction: column;
@@ -65,13 +54,13 @@
   height: 100%;
 }
 
-.section::-webkit-scrollbar-thumb:hover {
+.section::-webkit-scrollbar-thumb {
   background-color: #5e5d5d;
   border-radius: 12px;
 }
 
 @media (width >= 768px) {
   .section {
-    padding-right: 0.5rem;
+    padding-right: 0;
   }
 }

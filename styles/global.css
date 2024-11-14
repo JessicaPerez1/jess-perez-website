@@ -1,5 +1,4 @@
-html{
-  overflow: hidden;
+html {
   background: rgb(23, 23, 23);
   color: white;
 }
@@ -39,7 +38,7 @@ a:hover {
   color: rgb(94, 92, 92);
 }
 
-a:focus{
+a:focus {
   text-decoration: line-through;
 }
 

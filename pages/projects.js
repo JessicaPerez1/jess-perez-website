@@ -9,7 +9,7 @@ export const getStaticProps = async () => {
   const filePath = path.join(process.cwd(), "data", "projects.json");
   const fileContents = fs.readFileSync(filePath, "utf8");
   const projects = JSON.parse(fileContents);
-
+  console.info("PROJECTS", projects);
   return {
     props: {
       projects,
@@ -18,26 +18,27 @@ export const getStaticProps = async () => {
 };
 
 Projects.propTypes = {
-  projects: PropTypes.func.isRequired,
+  projects: PropTypes.array,
 };
 
 export default function Projects({ projects }) {
   return (
     <section className={utilStyles.section}>
       <ul className={utilStyles.list}>
-        {projects.map(({ date, title, href }) => (
-          <li className={utilStyles.listItem} key={title}>
-            <Link href={`${href}`}>
-              <a target="_blank" href={`${href}`}>
-                {title}
-                <br />
-                <small>
-                  <DateComponent dateString={date} />
-                </small>
-              </a>
-            </Link>
-          </li>
-        ))}
+        {projects?.length &&
+          projects.map(({ date, title, href }) => (
+            <li className={utilStyles.listItem} key={title}>
+              <Link href={`${href}`}>
+                <a target="_blank">
+                  {title}
+                  <br />
+                  <small>
+                    <DateComponent dateString={date} />
+                  </small>
+                </a>
+              </Link>
+            </li>
+          ))}
       </ul>
     </section>
   );

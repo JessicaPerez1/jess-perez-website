@@ -12,30 +12,31 @@ SplashScreen.propTypes = {
 export default function SplashScreen({ finishLoading }) {
   const [isMounted, setIsMounted] = useState(false);
 
-  const animate = () => {
-    const loader = anime.timeline({
-      complete: () => finishLoading(),
-    });
-
-    loader.add({
-      targets: ".container",
-      duration: 2000,
-      easing: "easeInOutExpo",
-    });
-  };
-
   useEffect(() => {
+    const animate = () => {
+      const loader = anime.timeline({
+        complete: () => finishLoading(),
+      });
+
+      loader.add({
+        targets: ".container",
+        duration: 2000,
+        easing: "easeInOutExpo",
+      });
+    };
+
     const timeout = setTimeout(() => setIsMounted(true), 500);
     animate();
     return () => clearTimeout(timeout);
-  }, []);
+  }, [finishLoading]);
+
   return (
     <div className={styles.containerOuter}>
       <section className={styles.container}>
         <p className={styles.glitch}>
-          <span aria-hidden="true"> Jessica Perez | Portfolio </span>
-          Jessica Perez | Portfolio
-          <span aria-hidden="true"> Jessica Perez | Portfolio </span>
+          <span aria-hidden="true"> Jessica Perez-Jacob </span>
+          Jessica Perez-Jacob
+          <span aria-hidden="true"> Jessica Perez-Jacob </span>
         </p>
       </section>
     </div>
