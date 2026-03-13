@@ -1,4 +1,4 @@
-import utilStyles from "../styles/utils.module.css";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function Info() {
   return (
@@ -16,7 +16,7 @@ export default function Info() {
           </li>
           <li className={utilStyles.listItem}>
             <a
-              href="/assets/Jess-Perez-CV.pdf"
+              href="/assets/Jess_Perez_CV.pdf"
               title="open resume"
               rel="noopener noreferrer"
               target="_blank"

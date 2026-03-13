@@ -1,3 +1,12 @@
+.headerNoBreak {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .headerNoBreak {
+    white-space: normal;
+  }
+}
 .container {
   top: 1rem;
   bottom: 1rem;
@@ -46,22 +55,19 @@
   }
 }
 
+
 .name {
-  font-size: 22px;
+  font-size: clamp(18px, 3vw, 27px);
   font-weight: 500;
-  transition: font-size 0.3s ease;
+  transition: font-size 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (width >= 768px) {
-  .name {
-    font-size: 25px;
-  }
+  /* font-size now handled by clamp() for .name */
 }
 
 @media (width >= 1280px) {
-  .name {
-    font-size: 27px;
-  }
+  /* font-size now handled by clamp() for .name */
 }
 
 .name,
@@ -69,22 +75,17 @@
   margin: 0rem;
 }
 
+
 .title,
 .title a {
-  font-size: 13px;
-  transition: font-size 0.3s ease;
+  font-size: clamp(11px, 2vw, 16px);
+  transition: font-size 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (width >= 768px) {
-  .title,
-  .title a {
-    font-size: 14px;
-  }
+  /* font-size now handled by clamp() for .title and .title a */
 }
 
 @media (width >= 1280px) {
-  .title,
-  .title a {
-    font-size: 16px;
-  }
+  /* font-size now handled by clamp() for .title and .title a */
 }

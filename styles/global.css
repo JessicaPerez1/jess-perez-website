@@ -14,12 +14,47 @@ body {
   font-size: 18px;
 }
 
+
+
 a {
   font-weight: 100;
   font-size: 16px;
-  color: rgb(176, 175, 175);
+  color: white;
   text-decoration: none;
-  transition: font-size 0.3s ease;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.menuLink {
+  color: rgb(176, 175, 175) !important;
+  transition: color 0.3s ease;
+}
+
+a:hover, .menuLink:hover {
+  color: rgb(94, 92, 92) !important;
+}
+
+
+/* All links except menu links use white color by default */
+.content a,
+.section a,
+.list a,
+.projectTitleNoBreak a {
+  color: white;
+}
+
+/* Menu links keep their original color */
+.menu a {
+  color: rgb(176, 175, 175);
+  transition: color 0.3s ease;
+}
+
+/* Restore hover for all links */
+a:hover, .menu a:hover {
+  color: rgb(94, 92, 92);
+}
+
+a:hover {
+  color: rgb(94, 92, 92);
 }
 
 @media (width >= 768px) {

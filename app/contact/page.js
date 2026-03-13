@@ -1,5 +1,5 @@
 import { GoArrowUpRight } from "react-icons/go";
-import utilStyles from "../styles/utils.module.css";
+import utilStyles from "../../styles/utils.module.css";
 
 export default function Contact() {
   return (

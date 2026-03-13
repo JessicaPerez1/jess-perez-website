@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./menu.module.css";
 
@@ -11,23 +12,20 @@ const menuItems = [
   { name: "Contact", href: "/contact" },
 ];
 
+
 export default function Menu() {
-  // TO DO: fix strikethrough current menu/project selection to persist on click
-  // const [selectedIndex, setSelectedIndex] = useState(null);
-  // const handleClick = (index) => {
-  //   setSelectedIndex(index); // Set the index of the selected link
-  // };
+  const pathname = usePathname();
 
   return (
     <ul className={styles.menu}>
       {menuItems.map((item) => (
         <li key={item.name}>
           <Link
-            // onClick={handleClick(item.name)}
-            // className={selectedIndex === item.name ? styles.strikeThrough : ""}
             href={item.href}
+            key={item.name}
+            className={`menuLink${pathname === item.href ? ' ' + styles.strikeThrough : ''}`}
           >
-            <a key={item.name}>{item.name}</a>
+            {item.name}
           </Link>
         </li>
       ))}

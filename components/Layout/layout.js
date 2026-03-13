@@ -26,8 +26,8 @@ export default function Layout({ children }) {
     <div className={styles.container}>
       <div className={styles.innerContainer}>
         <header className={styles.header}>
-          <h2 className={styles.name}>Jessica Perez-Jacob</h2>
-          <p className={styles.title}>
+          <h2 className={`${styles.name} ${styles.headerNoBreak}`}>Jessica Perez-Jacob</h2>
+          <p className={`${styles.title} ${styles.headerNoBreak}`}>
             Software developer at <a href="https://work.co">Work&Co</a>
           </p>
           <Menu />
