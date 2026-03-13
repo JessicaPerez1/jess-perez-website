@@ -5,6 +5,7 @@ import styles from "../components/Layout/layout.module.css";
 import Menu from "../components/Menu";
 
 export const metadata = {
+  metadataBase: new URL("https://your-vercel-deployment-url.vercel.app"),
   title: "Jessica Perez Website",
   description: "Jessica Perez Portfolio and Projects",
 };

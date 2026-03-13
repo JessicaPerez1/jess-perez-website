@@ -1,4 +1,4 @@
-import About from "./about/page";
+import About from "../components/About";
 
 export default function HomePage() {
   return <About />;

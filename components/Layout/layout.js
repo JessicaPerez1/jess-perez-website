@@ -11,7 +11,7 @@ export const siteTitle = "Jessica Perez Website";
 Layout.propTypes = {
   children: PropTypes.object.isRequired,
 };
-// TODO: fix html nesting error
+
 export default function Layout({ children }) {
   const isHome = "/";
   const [isLoading, setIsLoading] = useState(isHome);
